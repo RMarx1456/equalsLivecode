@@ -22,4 +22,30 @@ public class Centroid {
     public String getName() {
         return name;
     }
+    @Override
+    public boolean equals(Object o) {
+        boolean RET = true;
+        if(o == null) {
+            return false;
+        }
+        if(getClass() != o.getClass()) {
+            return false;
+        }
+        Centroid other = (Centroid) o;
+        if(r != other.r) {
+            return false;
+        }
+        if(c != other.c) {
+            return false;
+        }
+        if(name == null) {
+            if(other.name == null) { return RET;}
+            else if(other.name != null){return false;}
+        }
+        if(!name.equals(other.name)) {
+            return false;
+        }
+
+        return RET;
+    }
 }
